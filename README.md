@@ -24,29 +24,7 @@ The message has the form of: `origin;destination`
 `origin` and `destination` have to be replaced by the actual origin and destination.
 
 ### `server` -> `client`
-```
-Status:
---------------
-| OK? | DESC |   ==>    OK?.DESC
---------------          0.0 -> OK
-                        0.1 -> OK :: No path
-                        1.0 -> FAILED :: Wrong incoming format
-                        1.1 -> FAIELD :: Origin not registered
-                        1.2 -> FAILED :: Destination not registered
-                        1.3 -> FAILED :: Server fault
-Data:
-0.1, 1.* -> None
-       ----------------
-0.0 -> | DIR | AMOUNT | (repeated)  ==>    DIR
-       ----------------                      N -> Nord
-                                             E -> Est
-                                             S -> Sud
-                                             W -> West 
-                                           AMOUNT :: integer
-EXAMPLE:
-0.0;N10W200S15
-1.2;
-```
+
 The message has the form of: `status;data`
 ```
 -----------------
