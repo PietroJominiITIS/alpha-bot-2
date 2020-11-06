@@ -6,6 +6,7 @@
 # or
 cd server && python3 index.py
 ```
+To modify the host address and port edit them on line `15` of the file `server/index.py`
 
 ## Client
 ```sh
