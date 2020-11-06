@@ -45,7 +45,7 @@ The message has the form of: `status;data`
 |code|data
 |:-|-:|
 |0.1, 1.*|none
-|0.0|`dir|amount` (\| is to be omitted)
+|0.0|`dir-amount` (- is to be omitted)
 
 **dir**
 - `N` -> nord
