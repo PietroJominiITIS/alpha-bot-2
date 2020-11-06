@@ -54,3 +54,9 @@ The message has the form of: `status;data`
 - `W` -> west
 
 **amount**: any integer
+
+### Examples
+- rome;milan
+- 3.0;SMART_LAB
+- 0.0;N10W200S15
+- 1.2;
