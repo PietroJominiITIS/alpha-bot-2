@@ -4,7 +4,7 @@
 
 ### Download
 ```sh
-sh <(wget -qO- https://raw.githubusercontent.com/PietroJominiITIS/alphabotbot/master/clone.sh) server alphabotbot_server
+sh <(wget -qO- https://raw.githubusercontent.com/PietroJominiITIS/alphabotbot/master/scripts/clone.sh) server alphabotbot_server
 ```
 
 ### Run
@@ -17,7 +17,7 @@ python3 server.py
 
 ### Download
 ```sh
-sh <(wget -qO- https://raw.githubusercontent.com/PietroJominiITIS/alphabotbot/master/clone.sh) client alphabot_client
+sh <(wget -qO- https://raw.githubusercontent.com/PietroJominiITIS/alphabotbot/master/scripts/clone.sh) client alphabot_client
 ```
 
 ### Run
