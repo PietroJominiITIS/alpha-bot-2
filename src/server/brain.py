@@ -2,13 +2,13 @@
 Decision-making entity
 """
 
-from src.common import protocol as proto
+import src.protocol.stc as proto
 from src.server.db import Db
 
 
 def execute(cmd):
     status, payload = cmd
-    if status == proto.Codes.WRONG_FORMAT:
+    if status == proto.Status.WRONG_FORMAT:
         return proto.wrong_format()
 
     origin, destination = payload

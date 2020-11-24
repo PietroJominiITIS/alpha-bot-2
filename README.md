@@ -15,3 +15,5 @@ python3 client.py
 - [ ] images stream
 - [ ] dummy alphabot controller
 - [x] rework file structure to allow common modules
+- [ ] documentation / comments
+- [ ] makes medium.py common -> server + client
