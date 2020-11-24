@@ -1,12 +1,28 @@
 # Alpha(bot)bot
 
 ## Server
+
+### Download
 ```sh
+sh <(wget -qO- https://raw.githubusercontent.com/PietroJominiITIS/alphabotbot/master/clone.sh) server alphabotbot_server
+```
+
+### Run
+```sh
+cd alphabot_server
 python3 server.py
 ```
 
 ## Client
+
+### Download
 ```sh
+sh <(wget -qO- https://raw.githubusercontent.com/PietroJominiITIS/alphabotbot/master/clone.sh) client alphabot_client
+```
+
+### Run
+```sh
+cd alphabot_client
 python3 client.py
 ```
 
