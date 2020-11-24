@@ -2,19 +2,16 @@
 
 ## Server
 ```sh
-./server/run.sh
-# or
-cd server && python3 index.py
+python3 server.py
 ```
-To modify the host address and port edit them on line `15` of the file `server/index.py`
 
 ## Client
 ```sh
-# Still a placeholder client
-python3 client_dummy.py
+python3 client.py
 ```
 
 ## TODOS
+- [x] apply [standard protocol](https://github.com/conradis/TPSIT-classi-quinte/blob/main/alphabot/specifica.md)
 - [ ] images stream
 - [ ] dummy alphabot controller
-- [ ] rework file structure to allow common modules
+- [x] rework file structure to allow common modules

@@ -4,7 +4,6 @@ sqlite abstraction layer
 
 import sqlite3
 import os.path
-from pprint import pprint as pp
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "data", "percorsi.db")
@@ -64,8 +63,3 @@ class Db():
             for orig, dest, path
             in cursor.fetchall()
         }
-
-
-if __name__ == "__main__":
-    with Db() as db:
-        pp(db.all())

@@ -2,8 +2,8 @@
 Decision-making entity
 """
 
-import protocol as proto
-from db import Db
+from src.common import protocol as proto
+from src.server.db import Db
 
 
 def execute(cmd):
