@@ -26,6 +26,7 @@ class Medium():
         worker.start()
 
     def open(self):
+        """Dummy"""
         pass
 
     def close(self):
@@ -59,6 +60,7 @@ class TCP(Medium):
     def open(self):
         super().open()
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.sock.bind((self.address, self.port))
         self.sock.listen()
 
