@@ -1,5 +1,7 @@
 """
 Dummy AlphaBot for testing purposes
+basically, a big mess 
+TODO make rotation somehow realistic
 """
 
 import turtle
@@ -8,7 +10,7 @@ from threading import Thread
 from enum import Enum
 
 
-class Alphabot():
+class AlphaBot():
 
     def __init__(self, rdelay=.01, speed=100, direction=0, width=750, height=750):
         self.rdelay = rdelay
@@ -25,6 +27,9 @@ class Alphabot():
         self.worker = Thread(target=self.dm)
         self.worker.daemon = True
         self.worker.start()
+
+        self._d_pos = (0, 0)
+        self._d_rot = 0
 
     def forward(self):
         self.going_forward = True
@@ -67,14 +72,19 @@ class Alphabot():
             elapsed = time.time() - ctr
             if elapsed < self.rdelay:
                 continue
+            ctr = time.time()
 
-            actual_speed = self.speed * elapsed
-            distance = actual_speed * self.going_forward * -1 if self.going_backward else 1
-            self.dir += self.rotation * actual_speed
+            self.dir += self.rotation * self.speed * elapsed
+            space = self.speed * elapsed
+            if self.going_forward:
+                space *= 1
+            elif self.going_backward:
+                space *= -1
+            else:
+                space *= 0
 
             bot.setheading(self.dir)
-            bot.forward(distance)
+            bot.forward(space)
 
-            print(elapsed, distance, self.dir)
-
-            ctr = time.time()
+            self._d_rot = bot.heading()
+            self._d_pos = bot.pos()

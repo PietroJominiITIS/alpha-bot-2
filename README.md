@@ -33,3 +33,4 @@ python3 client.py
 - [x] rework file structure to allow common modules
 - [ ] documentation / comments
 - [ ] makes medium.py common -> server + client
+- [ ] log
