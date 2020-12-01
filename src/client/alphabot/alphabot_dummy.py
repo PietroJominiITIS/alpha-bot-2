@@ -12,7 +12,7 @@ from enum import Enum
 
 class AlphaBot():
 
-    def __init__(self, rdelay=.01, speed=100, direction=0, width=750, height=750):
+    def __init__(self, _d_scale=1, rdelay=.01, speed=100, direction=0, width=750, height=750):
         self.rdelay = rdelay
         self.speed = speed
         self.dir = direction
@@ -30,6 +30,8 @@ class AlphaBot():
 
         self._d_pos = (0, 0)
         self._d_rot = 0
+
+        self._d_scale = _d_scale
 
     def forward(self):
         self.going_forward = True
@@ -84,7 +86,7 @@ class AlphaBot():
                 space *= 0
 
             bot.setheading(self.dir)
-            bot.forward(space)
+            bot.forward(space / self._d_scale)
 
             self._d_rot = bot.heading()
             self._d_pos = bot.pos()
