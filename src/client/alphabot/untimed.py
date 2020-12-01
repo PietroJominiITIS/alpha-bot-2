@@ -15,7 +15,7 @@ but soomehow i could't manage to do it correctly
 """
 linear_speed = 87.5  # should be 100, turtle/process lag?
 # yep, that should be 100 al well and the same as the linear one lol
-rotation_speed = 96.5
+rotation_speed = 99
 # measured with 100 (linear) and 90 (rotation)
 # and they seems not to be parametrics (!?)
 # dunno, too late, tomorrow's problem
