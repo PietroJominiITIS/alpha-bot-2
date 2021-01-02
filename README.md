@@ -34,3 +34,4 @@ python3 client.py
 - [ ] documentation / comments
 - [ ] makes medium.py common -> server + client
 - [ ] log
+- [ ] unified config
