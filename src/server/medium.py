@@ -4,9 +4,11 @@ Connection medium abstraction layer
 
 import socket
 from threading import Thread
+from flask import Flask
 
 
-class Medium():
+class Medium:
+    """"""
 
     def __init__(self):
         self.workers = []
@@ -17,7 +19,7 @@ class Medium():
             self.listener(handler)
         except KeyboardInterrupt:
             return
-        except e:
+        except Exception as e:
             self.on_error(e)
 
     def worker(self, target):
@@ -51,6 +53,7 @@ class Medium():
 
 
 class TCP(Medium):
+    """"""
 
     def __init__(self, address, port):
         super().__init__()
@@ -82,3 +85,20 @@ class TCP(Medium):
     def on_error(self, e):
         self.close()
         raise e
+
+
+class HTTP(Medium):
+    """"""
+
+    def __init__(self, address, port):
+        super().__init__()
+        self.address = address
+        self.port = port
+        self.url = "/"
+
+    def open(self):
+        self.app = Flask(__name__)
+
+    def listener(self, handler):
+        self.app.route(self.url)(handler)
+        self.app.run(self.address, self.port)
