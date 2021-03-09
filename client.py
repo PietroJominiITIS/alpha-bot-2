@@ -33,7 +33,7 @@ if __name__ == "__main__":
     #         handle_error(status, data)
     #     else:
     #         handle_path(data)
-    res = requests.get(f"http://127.0.0.1:3000/{argv[1]}/{argv[2]}").json()
+    res = requests.get(f"http://{argv[1]}/{argv[2]}/{argv[3]}").json()
 
     status = Status(res["code"])
     data = res["data"]
